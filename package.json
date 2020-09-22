@@ -116,7 +116,7 @@
 		"openzeppelin-solidity-2.3.0": "npm:openzeppelin-solidity@2.3.0",
 		"pretty-error": "^2.1.1",
 		"solidity-parser-antlr": "^0.4.11",
-		"synthetix-data": "^2.1.28",
+		"synthetix-data": "^2.1.29",
 		"web3-utils": "1.2.2"
 	}
 }
