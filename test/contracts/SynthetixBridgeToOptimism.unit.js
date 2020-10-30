@@ -176,8 +176,8 @@ contract('SynthetixBridgeToOptimism (unit tests)', accounts => {
 						assert.equal(messenger.smocked.sendMessage.calls[0][2], (3e6).toString());
 					});
 
-					it('and a RewardDepositByAccount event is emitted', async () => {
-						assert.eventEqual(txn, 'RewardDepositByAccount', [user1, amount]);
+					it('and a RewardDeposit event is emitted', async () => {
+						assert.eventEqual(txn, 'RewardDeposit', [user1, amount]);
 					});
 				});
 			});
@@ -195,7 +195,7 @@ contract('SynthetixBridgeToOptimism (unit tests)', accounts => {
 					});
 				});
 
-				describe('when invoked by the rewardsDistribution', () => {
+				describe('when invoked by the rewardsDistribution', () => { 
 					let txn;
 					let amount;
 					beforeEach(async () => {
@@ -216,8 +216,8 @@ contract('SynthetixBridgeToOptimism (unit tests)', accounts => {
 						assert.equal(messenger.smocked.sendMessage.calls[0][2], (3e6).toString());
 					});
 
-					it('and a RewardDepositByAccount event is emitted', async () => {
-						assert.eventEqual(txn, 'RewardDeposit', [amount]);
+					it('and a RewardDeposit event is emitted', async () => {
+						assert.eventEqual(txn, 'RewardDeposit', [rewardsDistribution, amount]);
 					});
 				});
 			});
