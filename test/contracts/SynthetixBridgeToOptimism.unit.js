@@ -184,6 +184,12 @@ contract('SynthetixBridgeToOptimism (unit tests)', accounts => {
 
 			describe('notifyRewardAmount', () => {
 				describe('failure modes', () => {
+					it('does not work when the contract has been deactivated', async () => {
+						await instance.migrateBridge(ZERO_ADDRESS, { from: owner });
+
+						await assert.revert(instance.deposit('1'), 'Function deactivated');
+					});
+
 					it('does not work when not invoked by the rewardDistribution address', async () => {
 						await onlyGivenAddressCanInvoke({
 							fnc: instance.notifyRewardAmount,

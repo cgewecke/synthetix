@@ -146,7 +146,7 @@ contract SynthetixBridgeToOptimism is Owned, MixinResolver, ISynthetixBridgeToOp
     }
 
     // invoked by RewardsDistribution on L1 (takes SNX)
-    function notifyRewardAmount(uint256 amount) external {
+    function notifyRewardAmount(uint256 amount) external requireActive {
         require(msg.sender == address(rewardsDistribution()), "Caller is not RewardsDistribution contract");
 
         // to be here means I've been given an amount of SNX to distribute onto L2
