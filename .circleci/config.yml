@@ -89,7 +89,6 @@ jobs:
     job-coverage-report:
         docker:
             - image: circleci/node:12.18
-        resource_class: xlarge
         steps:
             - checkout
             - attach_workspace:
