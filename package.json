@@ -5,6 +5,7 @@
 	"author": "Synthetix",
 	"description": "The smart contracts which make up the Synthetix system. (synthetix.io)",
 	"scripts": {
+		"ci": "yarn",
 		"clean-install": "rm -rf build && rm ./package-lock.json && rm -rf node_modules/* && npm install",
 		"compile:legacy": "buidler compile --config legacy/buidler.legacy.js",
 		"compile": "npm run compile:legacy && buidler compile",
@@ -75,6 +76,9 @@
 	"homepage": "https://synthetix.io",
 	"directories": {
 		"test": "test"
+	},
+	"resolutions": {
+		"*/**/@nomiclabs/truffle-contract": "4.2.24"
 	},
 	"devDependencies": {
 		"@codechecks/client": "0.1.10",
