@@ -76,6 +76,9 @@
 	"directories": {
 		"test": "test"
 	},
+	"resolutions": {
+		"*/**/@nomiclabs/truffle-contract": "4.2.24"
+	},
 	"devDependencies": {
 		"@codechecks/client": "0.1.10",
 		"@eth-optimism/ovm-toolchain": "0.0.1-alpha.11",
